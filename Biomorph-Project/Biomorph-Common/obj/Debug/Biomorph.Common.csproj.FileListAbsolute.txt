@@ -1,0 +1,5 @@
+C:\Users\d-abe\Source\Repos\Biomorph-Project\Biomorph-Project\Biomorph-Common\bin\Debug\Biomorph-Common.dll
+C:\Users\d-abe\Source\Repos\Biomorph-Project\Biomorph-Project\Biomorph-Common\bin\Debug\Biomorph-Common.pdb
+C:\Users\d-abe\Source\Repos\Biomorph-Project\Biomorph-Project\Biomorph-Common\obj\Debug\Biomorph.Common.csprojResolveAssemblyReference.cache
+C:\Users\d-abe\Source\Repos\Biomorph-Project\Biomorph-Project\Biomorph-Common\obj\Debug\Biomorph-Common.dll
+C:\Users\d-abe\Source\Repos\Biomorph-Project\Biomorph-Project\Biomorph-Common\obj\Debug\Biomorph-Common.pdb

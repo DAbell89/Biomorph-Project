@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="Biomorph_Project_Tests.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Biomorph_Project_Tests"
+    RequestedTheme="Light">
+
+</Application>
