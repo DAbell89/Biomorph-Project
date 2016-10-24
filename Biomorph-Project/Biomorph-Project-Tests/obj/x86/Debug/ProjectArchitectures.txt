@@ -1,2 +1,0 @@
-C:\Users\d-abe\Source\Repos\Biomorph-Project\Biomorph-Project\Biomorph-Project-Common\Biomorph-Project-Common.csproj;x86
-C:\Users\d-abe\Source\Repos\Biomorph-Project\Biomorph-Project\Biomorph-Project-Tests\Biomorph-Project-Tests.csproj;x86
