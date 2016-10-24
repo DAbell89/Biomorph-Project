@@ -45,18 +45,16 @@ namespace Biomorph.Common
             get { return this._vision; }
         }
 
-        public Biomorph(int minTemp, int maxTemp, int strength, int intel, int camo, int vision)
+        public Biomorph()
         {
-            if (minTemp>maxTemp)
-            {
-                throw new ArgumentOutOfRangeException("minTemp", "minTemp must not be grater than maxTemp");
-            }
-            _minTemp = minTemp;
-            _maxTemp = maxTemp;
-            _strength = strength;
-            _intel = intel;
-            _camo = camo;
-            _vision = vision;
+            var random = new Random();
+            
+            _minTemp = random.Next(0, 10);
+            _maxTemp = random.Next(0, 10);
+            _strength = random.Next(0, 10);
+            _intel = random.Next(0, 10);
+            _camo = random.Next(0, 10);
+            _vision = random.Next(0, 10);
         }
 
         /// <summary>

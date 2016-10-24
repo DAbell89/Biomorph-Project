@@ -7,25 +7,20 @@ namespace Biomorph.Common.Test
     public class BiomorphTests
     {
         [TestMethod]
-        public void ItInitializesValues()
+        public void CreatesNewRandomizedBiomorphWithValuesbetween1And10()
         {
-            var bio = new Biomorph(75,78,5,6,7,8);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
-        public void ItMustThrowIfTempMinGreaterThanTempMax()
-        {
-            var bio = new Biomorph(2, 1, 1, 1, 1, 1);
+            var bio = new Biomorph();
         }
 
         [TestMethod]
         public void CombatMethodReturnsTheSumOfTheScoreDifferences()
         {
-            var bio = new Biomorph(4, 8, 5, 6, 2, 3);
-            var opponent = new Biomorph(4, 8, 4, 5, 1, 2);
+            var bio = new Biomorph();
+            var opponent = new Biomorph();
 
-            Assert.AreEqual(4, bio.CombatScore(opponent));
+            var expected = (bio.Strength - opponent.Strength) + (bio.Intel - opponent.Intel) + (bio.Camo - opponent.Camo) + (bio.Vision - opponent.Vision);
+
+            Assert.AreEqual(expected, bio.CombatScore(opponent));
         }
     }
 }
