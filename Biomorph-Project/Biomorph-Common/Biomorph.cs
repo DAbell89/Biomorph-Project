@@ -60,7 +60,7 @@ namespace Biomorph.Common
         }
 
         /// <summary>
-        /// Calculates the scores of BioMorph vz Opponent
+        /// Calculates the scores of BioMorph vz Opponent and returns a total score
         /// </summary>
         /// <param name="oponent"></param>
         /// <returns></returns>
@@ -72,14 +72,15 @@ namespace Biomorph.Common
             scores.Add(Scorer(_camo, oponent.Camo));
             scores.Add(Scorer(_vision, oponent.Vision));
 
-            if (scores.Any(x => x < 0))
-            {
-                return 0;
-            }
-
             return scores.Sum();
         }
 
+        /// <summary>
+        /// Calculates the difference between scores
+        /// </summary>
+        /// <param name="bioScore">Biomorph's Score</param>
+        /// <param name="oponentScore">Oponent's score</param>
+        /// <returns>Difference between scores</returns>
         private int Scorer(int bioScore, int oponentScore)
         {
             return bioScore - oponentScore;

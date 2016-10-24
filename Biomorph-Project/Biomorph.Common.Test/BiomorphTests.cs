@@ -18,5 +18,14 @@ namespace Biomorph.Common.Test
         {
             var bio = new Biomorph(2, 1, 1, 1, 1, 1);
         }
+
+        [TestMethod]
+        public void CombatMethodReturnsTheSumOfTheScoreDifferences()
+        {
+            var bio = new Biomorph(4, 8, 5, 6, 2, 3);
+            var opponent = new Biomorph(4, 8, 4, 5, 1, 2);
+
+            Assert.AreEqual(4, bio.CombatScore(opponent));
+        }
     }
 }
