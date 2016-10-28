@@ -8,12 +8,19 @@ namespace Biomorph.Common
 {
     public class Biomorph : IBiomorph
     {
+        private bool _alive;
         private int _minTemp;
         private int _maxTemp;
         private int _strength;
         private int _intel;
         private int _camo;
         private int _vision;
+
+        public bool Alive
+        {
+            get { return _alive; }
+            set { _alive = value; }
+        }
 
         public int MinTemp
         {
@@ -23,6 +30,19 @@ namespace Biomorph.Common
         public int MaxTemp
         {
             get { return this._maxTemp; }
+        }
+
+        public IEnumerable<int> TempRange
+        {
+            get
+            {
+                var range = new List<int>();
+                for (int i = _minTemp; i <= _maxTemp; i++)
+                {
+                    range.Add(i);
+                }
+                return range;
+            }
         }
 
         public int Strength
@@ -49,6 +69,7 @@ namespace Biomorph.Common
         {
             var random = new Random();
 
+            _alive = true;
             _minTemp = random.Next(0, 10);
             _maxTemp = random.Next(0, 10);
             _strength = random.Next(0, 10);
@@ -70,6 +91,7 @@ namespace Biomorph.Common
         {
             var random = new Random();
 
+            _alive = true;
             _minTemp = random.Next(parent.MinTemp - 5, parent.MinTemp + 5);
             _maxTemp = random.Next(parent.MaxTemp - 5, parent.MaxTemp + 5);
             _strength = random.Next(parent.Strength - 5, parent.Strength + 5);
@@ -100,31 +122,37 @@ namespace Biomorph.Common
             return offspring;
         }
 
-    /// <summary>
-    /// Calculates the scores of BioMorph vz Opponent and returns a total score
-    /// </summary>
-    /// <param name="oponent"></param>
-    /// <returns></returns>
-    public int CombatScore(IBiomorph oponent)
-    {
-        var scores = new List<int>();
-        scores.Add(Scorer(_strength, oponent.Strength));
-        scores.Add(Scorer(_intel, oponent.Intel));
-        scores.Add(Scorer(_camo, oponent.Camo));
-        scores.Add(Scorer(_vision, oponent.Vision));
+        /// <summary>
+        /// Calculates the scores of BioMorph vz Opponent and returns a total score
+        /// </summary>
+        /// <param name="oponent"></param>
+        /// <returns></returns>
+        public int CombatScore(IBiomorph oponent)
+        {
+            var scores = new List<int>();
+            scores.Add(Scorer(_strength, oponent.Strength));
+            scores.Add(Scorer(_intel, oponent.Intel));
+            scores.Add(Scorer(_camo, oponent.Camo));
+            scores.Add(Scorer(_vision, oponent.Vision));
+            var finalScore = scores.Sum();
 
-        return scores.Sum();
-    }
+            if (finalScore < 0)
+            {
+                _alive = false;
+            }
 
-    /// <summary>
-    /// Calculates the difference between scores
-    /// </summary>
-    /// <param name="bioScore">Biomorph's Score</param>
-    /// <param name="oponentScore">Oponent's score</param>
-    /// <returns>Difference between scores</returns>
-    private int Scorer(int bioScore, int oponentScore)
-    {
-        return bioScore - oponentScore;
+            return finalScore;
+        }
+
+        /// <summary>
+        /// Calculates the difference between scores
+        /// </summary>
+        /// <param name="bioScore">Biomorph's Score</param>
+        /// <param name="oponentScore">Oponent's score</param>
+        /// <returns>Difference between scores</returns>
+        private int Scorer(int bioScore, int oponentScore)
+        {
+            return bioScore - oponentScore;
+        }
     }
-}
 }
