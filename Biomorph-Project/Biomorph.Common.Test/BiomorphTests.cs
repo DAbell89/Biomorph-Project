@@ -8,10 +8,13 @@ namespace Biomorph.Common.Test
     public class BiomorphTests
     {
         [TestMethod]
-        public void CreatesNewRandomizedBiomorphWithValuesbetween1And10()
+        public void CreatesNewRandomizedBiomorph()
         {
             var bio = new Biomorph();
+
+            Assert.IsNotNull(bio);
         }
+
         [TestMethod]
         public void ItGeneratesFiveOffspring()
         {

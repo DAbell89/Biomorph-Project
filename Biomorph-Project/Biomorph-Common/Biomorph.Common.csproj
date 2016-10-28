@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Biomorph.cs" />
+    <Compile Include="Environment.cs" />
     <Compile Include="IBiomorph.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
