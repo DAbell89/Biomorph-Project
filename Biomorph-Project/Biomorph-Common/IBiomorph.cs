@@ -15,6 +15,6 @@ namespace Biomorph.Common
         int Camo { get; }
         int Vision { get; }
 
-        int CombatScore(IBiomorph oponent);
+        int ScoreCombat(IBiomorph oponent);
     }
 }

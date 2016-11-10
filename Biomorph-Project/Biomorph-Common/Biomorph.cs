@@ -15,6 +15,7 @@ namespace Biomorph.Common
         private int _intel;
         private int _camo;
         private int _vision;
+        private int _combatScore;
 
         public bool Alive
         {
@@ -64,6 +65,8 @@ namespace Biomorph.Common
         {
             get { return this._vision; }
         }
+
+        public int CombatScore { get { return _combatScore; } }
 
         public Biomorph()
         {
@@ -127,7 +130,7 @@ namespace Biomorph.Common
         /// </summary>
         /// <param name="oponent"></param>
         /// <returns></returns>
-        public int CombatScore(IBiomorph oponent)
+        public int ScoreCombat(IBiomorph oponent)
         {
             var scores = new List<int>();
             scores.Add(Scorer(_strength, oponent.Strength));
@@ -140,6 +143,8 @@ namespace Biomorph.Common
             {
                 _alive = false;
             }
+
+            _combatScore = finalScore;
 
             return finalScore;
         }

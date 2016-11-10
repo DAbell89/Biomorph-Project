@@ -42,12 +42,12 @@ namespace Biomorph.Common.Test
             var bio = new Biomorph();
             var opponent = new Biomorph();
 
-            var expected = CombatScore(bio, opponent);
+            var expected = ScoreCombat(bio, opponent);
 
-            Assert.AreEqual(expected, bio.CombatScore(opponent));
+            Assert.AreEqual(expected, bio.ScoreCombat(opponent));
         }
 
-        private static int CombatScore(Biomorph bio, Biomorph opponent)
+        private static int ScoreCombat(Biomorph bio, Biomorph opponent)
         {
             return (bio.Strength - opponent.Strength) + (bio.Intel - opponent.Intel) + (bio.Camo - opponent.Camo) + (bio.Vision - opponent.Vision);
         }
