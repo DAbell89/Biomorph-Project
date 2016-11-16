@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Biomorph.Common
 {
-    public class Biomorph : IBiomorph
+    public class Biomorph
     {
         private bool _alive;
         private int _minTemp;
@@ -87,6 +87,29 @@ namespace Biomorph.Common
         }
 
         /// <summary>
+        /// Creates Biomorph with specified inputs
+        /// </summary>
+        /// <param name="alive">Alive Property</param>
+        /// <param name="mintemp">Minimum Temperature Property</param>
+        /// <param name="maxtemp">Maximum Temperature  Property</param>
+        /// <param name="strenght">Strenght Property</param>
+        /// <param name="intel">Inteligence Property</param>
+        /// <param name="camo">Camoflague Property</param>
+        /// <param name="vision">Vision Property</param>
+        /// <param name="combatScore">Combat Score Property</param>
+        public Biomorph(bool alive, int mintemp, int maxtemp, int strenght, int intel, int camo, int vision, int combatScore)
+        {
+            _alive = alive;
+            _minTemp = mintemp;
+            _maxTemp = maxtemp;
+            _strength = strenght;
+            _intel = intel;
+            _camo = camo;
+            _vision = vision;
+            _combatScore = combatScore;
+        }
+
+        /// <summary>
         /// Initializes a child based of a parent Biomorph
         /// </summary>
         /// <param name="parent">Parent Biomorph</param>
@@ -130,7 +153,7 @@ namespace Biomorph.Common
         /// </summary>
         /// <param name="oponent"></param>
         /// <returns></returns>
-        public int ScoreCombat(IBiomorph oponent)
+        public int ScoreCombat(Biomorph oponent)
         {
             var scores = new List<int>();
             scores.Add(Scorer(_strength, oponent.Strength));

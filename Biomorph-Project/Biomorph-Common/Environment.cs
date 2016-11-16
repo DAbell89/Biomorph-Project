@@ -19,6 +19,11 @@ namespace Biomorph.Common
             _temp = random.Next(0, 10);
         }
 
+        public Environment(int temp)
+        {
+            this._temp = temp;
+        }
+
         public void AdvanceEnvironment()
         {
             var random = new Random();

@@ -136,3 +136,5 @@ C:\Users\Apollo89718\Source\Repos\Biomorph-Project\Biomorph-Project\Biomorph-Web
 C:\Users\Apollo89718\Source\Repos\Biomorph-Project\Biomorph-Project\Biomorph-Web\obj\Debug\Biomorph-Web.csprojResolveAssemblyReference.cache
 C:\Users\Apollo89718\Source\Repos\Biomorph-Project\Biomorph-Project\Biomorph-Web\obj\Debug\Biomorph-Web.dll
 C:\Users\Apollo89718\Source\Repos\Biomorph-Project\Biomorph-Project\Biomorph-Web\obj\Debug\Biomorph-Web.pdb
+C:\Users\Apollo89718\Source\Repos\Biomorph-Project\Biomorph-Project\Biomorph-Web\bin\Biomorph-Common.dll
+C:\Users\Apollo89718\Source\Repos\Biomorph-Project\Biomorph-Project\Biomorph-Web\bin\Biomorph-Common.pdb

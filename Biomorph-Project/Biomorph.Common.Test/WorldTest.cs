@@ -14,6 +14,7 @@ namespace Biomorph.Common.Test
         public void ItInitializesWithBioOpponentAndEnvironment()
         {
             var world = new World();
+            world.GenerateWorld();
 
             Assert.AreNotEqual(null, world.Bio);
             Assert.AreNotEqual(null, world.Opponent);
@@ -24,6 +25,7 @@ namespace Biomorph.Common.Test
         public void NextGenerationPutsOffspringsInTheOffspringListAndReturnOffspring()
         {
             var world = new World();
+            world.GenerateWorld();
             var result = world.NextGeneration();
 
             Assert.IsInstanceOfType(result, typeof(List<Biomorph>));
@@ -35,6 +37,7 @@ namespace Biomorph.Common.Test
         public void ArtificalySelectedBio()
         {
             var world = new World();
+            world.GenerateWorld();
             var result = world.NextGeneration();
 
             world.ArtificalySelectedBio(result.Where(x => x.Alive).FirstOrDefault());

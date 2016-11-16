@@ -57,7 +57,7 @@ namespace Biomorph.Common
         /// <summary>
         /// Initializes a new instance of a World
         /// </summary>
-        public World()
+        public void GenerateWorld()
         {
             _bio = new Biomorph();
             _opponent = new Biomorph();
