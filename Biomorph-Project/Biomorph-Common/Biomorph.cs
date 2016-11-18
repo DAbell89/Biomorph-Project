@@ -16,6 +16,7 @@ namespace Biomorph.Common
         private int _camo;
         private int _vision;
         private int _combatScore;
+        private static Random random = new Random();
 
         public bool Alive
         {
@@ -70,8 +71,6 @@ namespace Biomorph.Common
 
         public Biomorph()
         {
-            var random = new Random();
-
             _alive = true;
             _minTemp = random.Next(0, 10);
             _maxTemp = random.Next(0, 10);
@@ -162,7 +161,7 @@ namespace Biomorph.Common
             scores.Add(Scorer(_vision, oponent.Vision));
             var finalScore = scores.Sum();
 
-            if (finalScore < 0)
+            if (finalScore < -50)
             {
                 _alive = false;
             }

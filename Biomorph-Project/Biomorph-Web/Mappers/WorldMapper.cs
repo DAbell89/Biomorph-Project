@@ -14,11 +14,14 @@ namespace Biomorph_Web.Mappers
             model.Bio = bioMapper.Map(viewModel.Bio);
             model.Opponent = bioMapper.Map(viewModel.Opponent);
 
-            var offspring = new List<Biomorph.Common.Biomorph>();
-
-            foreach (var child in viewModel.Offspring)
+            if (viewModel.Offspring != null)
             {
-                offspring.Add(bioMapper.Map(child));
+                var offspring = new List<Biomorph.Common.Biomorph>();
+
+                foreach (var child in viewModel.Offspring)
+                {
+                    offspring.Add(bioMapper.Map(child));
+                }
             }
 
             var evoMapper = new EnvironmentMapper();
@@ -34,11 +37,14 @@ namespace Biomorph_Web.Mappers
             viewModel.Bio = bioMapper.Map(model.Bio);
             viewModel.Opponent = bioMapper.Map(model.Opponent);
 
-            var offspring = new List<Models.BiomorphViewModel>();
-
-            foreach (var child in model.Offspring)
+            if (model.Offspring != null)
             {
-                offspring.Add(bioMapper.Map(child));
+                var offspring = new List<Models.BiomorphViewModel>();
+
+                foreach (var child in model.Offspring)
+                {
+                    offspring.Add(bioMapper.Map(child));
+                }
             }
 
             var evoMapper = new EnvironmentMapper();

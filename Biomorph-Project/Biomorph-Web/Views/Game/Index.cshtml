@@ -1,7 +1,41 @@
-﻿
+﻿@model Biomorph_Web.Models.WorldViewModel
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
+<h2>NewWorld</h2>
+<div class="Dashboard">
+    <div class="DashElement Biomorph">
+        <h3>Biomorph</h3>
+        <ul>
+            <li>Alive: @Model.Bio.Alive</li>
+            <li>Min Temp: @Model.Bio.MinTemp</li>
+            <li>Max Temp: @Model.Bio.MaxTemp</li>
+            <li>Strength: @Model.Bio.Strength</li>
+            <li>Intel: @Model.Bio.Intel</li>
+            <li>Camo: @Model.Bio.Camo</li>
+            <li>Vision: @Model.Bio.Vision</li>
+            <li>Combat Score: @Model.Bio.CombatScore</li>
+        </ul>
+    </div>
+    <div class="DashElement Environment">
+        <h3>Environment</h3>
+        <ul>
+            <li>Temp: @Model.Environment.Temp</li>
+        </ul>
+    </div>
+    <div class="DashElement Biomorph">
+        <h3>Opponent</h3>
+        <ul>
+            <li>Alive: @Model.Opponent.Alive</li>
+            <li>Min Temp: @Model.Opponent.MinTemp</li>
+            <li>Max Temp: @Model.Opponent.MaxTemp</li>
+            <li>Strength: @Model.Opponent.Strength</li>
+            <li>Intel: @Model.Opponent.Intel</li>
+            <li>Camo: @Model.Opponent.Camo</li>
+            <li>Vision: @Model.Opponent.Vision</li>
+            <li>Combat Score: @Model.Opponent.CombatScore</li>
+        </ul>
+    </div>
+    <br style="clear:both;" />
+</div>

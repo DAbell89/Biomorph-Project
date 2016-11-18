@@ -42,5 +42,13 @@ namespace Biomorph.Common
 
             return nextGen;
         }
+
+        internal void TestCurrentGen(Biomorph bio)
+        {
+            if (!bio.TempRange.Contains(_temp))
+            {
+                bio.Alive = false;
+            }
+        }
     }
 }

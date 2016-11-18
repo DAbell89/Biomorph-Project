@@ -88,6 +88,15 @@ namespace Biomorph.Common
             return _offspring;
         }
 
+        public void TestCurrentGen()
+        {
+            Bio.ScoreCombat(Opponent);
+            Opponent.ScoreCombat(Bio);
+            _environment.TestCurrentGen(Bio);
+            _environment.TestCurrentGen(Opponent);
+
+        }
+
         /// <summary>
         /// Sets the Biomorph selected by user to main new BIO
         /// </summary>

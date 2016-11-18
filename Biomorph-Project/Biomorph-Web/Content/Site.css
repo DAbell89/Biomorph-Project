@@ -22,3 +22,30 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.Dashboard {
+    vertical-align: top;
+    width: 100%;
+}
+
+.DashElement {
+    margin-left:5px;
+    margin-right:5px;
+    border-radius: 5px;
+    padding:10px;
+    height:100%;
+}
+
+.DashElement ul{    
+    padding: 0;
+    list-style-type: none;
+}
+
+.Biomorph{
+    float: left;
+    background-color:darkolivegreen;
+}
+.Environment{
+    float: right;
+    background-color:steelblue;
+}

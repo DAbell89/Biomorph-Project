@@ -12,7 +12,12 @@ namespace Biomorph_Web.Controllers
         // GET: Game
         public ActionResult NewWorld()
         {
-            return View("Index",new World());
+            var world = new World();
+            world.GenerateWorld();
+            world.TestCurrentGen();
+
+            var worldMapper = new Mappers.WorldMapper();
+            return View("Index", worldMapper.Map(world));
         }
     }
 }
